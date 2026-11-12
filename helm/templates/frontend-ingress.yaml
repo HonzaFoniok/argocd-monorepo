@@ -5,10 +5,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
-  tls:
-    - hosts:
-        - frontend.fuf.sikademo.com
-      secretName: frontend-ingress2-tls
   rules:
     - host: frontend.fuf.sikademo.com
       http:
