@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: frontend-ingress2
+  name: {{include "Chart.fullname" .}}-ingress
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
@@ -17,6 +17,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: frontend-app-service
+                name: 
                 port:
                     number: 80

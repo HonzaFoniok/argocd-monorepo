@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: {{include "Chart.fullname" .}}-backend
+  labels:
+    app: {{include "Chart.fullname" .}}-backend
+spec:
+  replicas: {{.Values.replicaCount}}
+  selector:
+    matchLabels:
+      app: {{include "Chart.fullname" .}}-backend
+  template:
+    metadata:
+      labels:
+        app: {{include "Chart.fullname" .}}-backend
+    spec:
+      containers:
+        - name: {{include "Chart.fullname" .}}-backend-app
+          image: "{{.Values.image.backend.repository}}:{{.Values.backend.image.tag}}"
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS
+              value: {{ include "Chart.fullname" . }}-redis

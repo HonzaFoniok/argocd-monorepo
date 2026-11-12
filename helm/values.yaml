@@ -1,0 +1,11 @@
+# images
+image:
+  backend: 
+    repository: honzafoniok/backend-app
+    tag: v2
+  frontend:
+    repository: honzafoniok/frontend-app
+    tag: v1
+
+# replicas
+replicaCount: 3

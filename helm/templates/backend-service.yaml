@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: backend-app-service
+  name: {{include "Chart.fullname" .}}-backend
 spec: 
   selector:
-    app: backend-app
+    app: {{include "Chart.fullname" .}}-backend-app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 8000
-
