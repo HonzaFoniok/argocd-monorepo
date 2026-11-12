@@ -4,7 +4,7 @@ metadata:
   name: {{include "Chart.fullname" .}}-backend
 spec: 
   selector:
-    app: {{include "Chart.fullname" .}}-backend-app
+    app: {{include "Chart.fullname" .}}-backend
   ports:
     - protocol: TCP
       port: 80
