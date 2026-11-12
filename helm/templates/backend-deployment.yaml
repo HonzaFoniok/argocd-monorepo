@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: {{include "Chart.fullname" .}}-backend-app
-          image: "{{.Values.image.backend.repository}}:{{.Values.backend.image.tag}}"
+          image: "{{.Values.image.backend.repository}}:{{.Values.image.backend.tag}}"
           ports:
             - containerPort: 8000
           env:
