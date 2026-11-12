@@ -6,9 +6,9 @@ spec:
   replicas: 1
   serviceName: {{include "Chart.fullname" .}}-redis
     template:
-    metadata:
-      labels: 
-        app: {{include "Chart.fullname" .}}-redis
+      metadata:
+        labels: 
+          app: {{include "Chart.fullname" .}}-redis
   selector: 
     matchLabels: 
       app: {{include "Chart.fullname" .}}-redis
