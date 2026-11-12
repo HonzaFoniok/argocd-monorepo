@@ -9,6 +9,15 @@ spec:
     metadata:
       labels: 
         app: {{include "Chart.fullname" .}}-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
+          volumeMounts:
+            - mountPath: /data
+              name: data
   selector: 
     matchLabels: 
       app: {{include "Chart.fullname" .}}-redis
@@ -21,11 +30,3 @@ spec:
         resources:
           requests:
             storage: 1Gi
-        containers:
-          - name: redis
-            image: redis
-            ports:
-              - containerPort: 6379
-            volumeMounts:
-              - mountPath: /data
-                name: data
