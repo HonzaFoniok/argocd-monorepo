@@ -3,7 +3,7 @@ kind: StatefulSet
 metadata: 
   name: {{include "Chart.fullname" .}}-redis
 spec: 
-  replicas: {{.Values.replicaCount}}
+  replicas: {{.Values.replicaCount.redis}}
   serviceName: {{include "Chart.fullname" .}}-redis
   template:
     metadata:

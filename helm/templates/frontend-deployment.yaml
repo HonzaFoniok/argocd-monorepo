@@ -5,7 +5,7 @@ metadata:
   labels:
     app: {{include "Chart.fullname" .}}-frontend-app
 spec:
-  replicas: {{.Values.replicaCount}}
+  replicas: {{.Values.replicaCount.frontend}}
   selector:
     matchLabels:
       app: {{include "Chart.fullname" .}}-frontend-app
